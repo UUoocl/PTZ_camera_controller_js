@@ -1,0 +1,15 @@
+{
+  "name": "ptz_camera_controller_js",
+  "version": "0.0.1",
+  "description": "PTZ init release",
+  "main": "main.js",
+  "scripts": {
+    "start":"electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "uuoocl",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.3.0"
+  }
+}

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>Transparent Google Slides Player</title>
+  </head>
+  <body>
+    
+<h4>Connect to OBS WebSocket Server? (optional)</h4>
+    <label for="IP">Enter IP address or "localhost":</label>
+    <input type="text" id="IP" name="IP" value="localhost"/><br>
+    <label for="Port">Enter Port Number:</label>
+    <input type="text" id="Port" name="Port" value="4455"/><br>
+    <label for="PW">Enter Password:</label>
+    <input type="text" id="PW" name="PW" value="YourPasswordGoesHere"/><br>
+
+    <label for="installedCameras">Choose a camera:</label>
+    <select name="cameras" id="cameras">
+    <option value="">--Please choose a camera--</option></select>
+    <br><br>
+
+<h4><input type="checkbox" id="cameraWindow" name="cameraWindow" value=>
+<label for="cameraWindow">Open Camera Window</label></h4>
+
+
+    <h4><input type="checkbox" id="controlWindow" name="controlWindow" value=>
+<label for="controlWindow">Open Camera Control Window</label></h4>
+ <br><br>
+
+    <input type="button" id="SubmitButton" value="submit"/>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

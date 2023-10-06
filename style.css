@@ -1,0 +1,181 @@
+:root {
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #000;
+    }
+  }
+  
+  body {
+    margin: 0 0.6em;
+    transition: opacity 0.7s, filter 0.7s;
+  }
+  
+  body.hidden {
+    opacity: 0.1;
+    filter: blur(2px);
+  }
+  
+  h1 {
+    margin-top: 0.6em;
+    margin-bottom: 1em;
+  }
+  
+  #flagWarning {
+    text-align: center;
+    padding: 8px;
+    background-color: #f40000;
+    color: white;
+    margin: 0;
+    margin-left: -0.6em;
+    margin-right: -0.6em;
+    margin-bottom: 0.6em;
+  }
+  
+  small {
+    margin-left: 8px;
+    color: #f40000;
+    white-space: pre;
+  }
+  
+  select {
+    padding: 6px 0 6px 6px;
+    margin-bottom: 6px;
+  }
+  
+  button {
+    padding: 6px 4px;
+    margin-bottom: 6px;
+  }
+  
+  p {
+    margin-bottom: 0.6em;
+    word-break: break-all;
+  }
+  
+  #preview button {
+    margin: 4px 0;
+    user-select: none;
+  }
+  
+  #preview .buttons {
+    width: 380px;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4px;
+    margin: auto;
+  }
+  
+  #preview .buttons div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+    justify-content: center;
+  }
+  
+  #preview .ranges {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4px;
+    text-align: center;
+    margin: 0 4px;
+  }
+  
+  #preview .ranges input {
+    width: calc((320px / 3) - 8px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #logs {
+    margin-top: 1.2em;
+    padding-top: 1em;
+    border-top: 1px dashed #ccc;
+    max-height: 311px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  
+  #logs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin-top: 0;
+    line-height: 14px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 70%;
+  }
+  
+  pre.again::after {
+    content: attr(data-times);
+    float: right;
+    border-radius: 6px;
+    background: #999;
+    color: white;
+    padding: 0 4px;
+  }
+  
+  video {
+    display: block;
+    margin-top: -0.6em;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    video {
+      background: radial-gradient(
+        circle at 50% 0%,
+        rgba(238, 238, 238, 0.6) 0%,
+        rgba(204, 204, 204, 0.4) 80%
+      );
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #preview {
+      float: right;
+      margin-left: 1em;
+    }
+    video {
+      height: min(285px, calc(100vh - 75px));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      overflow: hidden;
+      margin: 0;
+      height: 0;
+    }
+    #preview {
+      margin: -0.6em;
+      margin-bottom: 1em;
+    }
+    #preview .buttons {
+      width: initial;
+      margin: 0 4px;
+    }
+    #preview .ranges {
+      width: initial;
+    }
+    video {
+      width: 100%;
+      margin-top: 0.6em;
+    }
+  }
+  
+  @media (min-width: 1070px) {
+    body {
+      width: 1024px;
+      margin: 0.6em auto;
+    }
+    #flagWarning {
+      margin-top: -0.6em;
+    }
+  }
+  

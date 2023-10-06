@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ptz controls</title>
+    <meta charset="utf-8" />
+    <meta name="Description" content="pan–tilt–zoom playground" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+
+    <!-- <script src="./controls-renderer.js" defer></script> -->
+  </head>
+  <body>
+    <div id="preview">
+      <video id="video" autoplay muted width="380" height="140"></video>
+      <div class="buttons">
+        <div>
+          <button id="panLeftButton" data-name="pan">
+            left
+          </button>
+          <button id="panRightButton" data-name="pan">
+            right
+          </button>
+        </div>
+        <div>
+          <button id="tiltDownButton" data-name="tilt" disabled>
+            down
+          </button>
+          <button id="tiltUpButton" data-name="tilt" disabled>
+            up
+          </button>
+        </div>
+        <div>
+          <button id="zoomOutButton" data-name="zoom" disabled>
+            zoom&nbsp;out
+          </button>
+          <button id="zoomInButton" data-name="zoom" disabled>
+            zoom&nbsp;in
+          </button>
+        </div>
+      </div>
+      <div class="ranges">
+        <input type="range" id="panRange" data-name="pan" disabled />
+        <input type="range" id="tiltRange" data-name="tilt" disabled />
+        <input type="range" id="zoomRange" data-name="zoom" disabled />
+      </div>
+    </div>
+    <div id="logs"></div>
+  </body>
+</html>
