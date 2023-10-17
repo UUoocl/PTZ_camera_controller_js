@@ -14,10 +14,10 @@
       <video id="video" autoplay muted width="380" height="140"></video>
       <div class="buttons">
         <div>
-          <button id="panLeftButton" data-name="pan">
+          <button id="panLeftButton" data-name="pan" disabled>
             left
           </button>
-          <button id="panRightButton" data-name="pan">
+          <button id="panRightButton" data-name="pan" disabled>
             right
           </button>
         </div>
@@ -37,13 +37,52 @@
             zoom&nbsp;in
           </button>
         </div>
+        <div>
+            <button id="focusFarButton" data-name="focusDistance" disabled>
+              focus&nbsp;far
+            </button>
+            <button id="focusNearButton" data-name="focusDistance" disabled>
+              focus&nbsp;near
+            </button>
+            <button id="focusModeButton" data-name="focusMode" disabled>
+                focus&nbsp;mode
+            </button>  
+        </div>
       </div>
       <div class="ranges">
         <input type="range" id="panRange" data-name="pan" disabled />
         <input type="range" id="tiltRange" data-name="tilt" disabled />
         <input type="range" id="zoomRange" data-name="zoom" disabled />
+        <input type="range" id="focusDistanceRange" data-name="focusDistance" disabled />
+        <input type="range" id="focusModeRange" data-name="focusMode" disabled />
       </div>
+      <div class="values">
+        <input type="number" id="panText" data-name="pan" disabled />
+        <input type="number" id="tiltText" data-name="tilt" disabled />
+        <input type="number" id="zoomText" data-name="zoom" disabled />
+        <input type="number" id="focusDistanceText" data-name="focusDistance" disabled />
+        <input type="number" id="focusModeText" data-name="focusMode" disabled />
+      </div><br><br>
     </div>
-    <div id="logs"></div>
+
+    <div class="addPreset">
+        Preset name:
+        <input type="text" id="newPresetName"/>
+        <button id="presetButton" disabled>
+            Add preset
+        </button>
+        <button id="downloadPresets" disabled>
+            Download Presets
+        </button>
+        <input type="file" id="loadPresets" accept="text/json">
+            Load Presets
+        </input>
+        <br>
+        Click on preset to move camera position.
+    </div>
+    <div id="presets"></div>
+            
+
+    <br><br><div id="logs"></div>
   </body>
 </html>

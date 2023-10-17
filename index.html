@@ -10,6 +10,10 @@
   <body>
     
 <h4>Connect to OBS WebSocket Server? (optional)</h4>
+    <label for="installedCameras">Choose a camera:</label>
+    <select name="cameras" id="cameras">
+    <option value="">--Please choose a camera--</option></select>
+    <br><br>
     <label for="IP">Enter IP address or "localhost":</label>
     <input type="text" id="IP" name="IP" value="localhost"/><br>
     <label for="Port">Enter Port Number:</label>
@@ -17,10 +21,6 @@
     <label for="PW">Enter Password:</label>
     <input type="text" id="PW" name="PW" value="YourPasswordGoesHere"/><br>
 
-    <label for="installedCameras">Choose a camera:</label>
-    <select name="cameras" id="cameras">
-    <option value="">--Please choose a camera--</option></select>
-    <br><br>
 
 <h4><input type="checkbox" id="cameraWindow" name="cameraWindow" value=>
 <label for="cameraWindow">Open Camera Window</label></h4>
