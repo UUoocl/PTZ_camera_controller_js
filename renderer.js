@@ -2,9 +2,10 @@ const button = document.getElementById('SubmitButton');
 
 window.addEventListener('DOMContentLoaded', async() => {
   getCameras();
+  //getGamepads();
 })
 
-function getCameras(){ 
+async function getCameras(){ 
   console.log("list of cameras")
   navigator.mediaDevices
     .enumerateDevices()
@@ -22,6 +23,19 @@ function getCameras(){
       });
     })
 }
+
+
+
+async function getGamepads(){
+    console.log(navigator.getGamepads()) 
+    console.log("list of gamepads")
+    for (const gamepad of navigator.getGamepads()) {
+        console.log(1)
+        
+    }
+    console.log(navigator.getGamepads()) 
+    
+  }
 
 button.addEventListener("click", newWindow);
 

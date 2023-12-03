@@ -8,10 +8,59 @@
     <!-- <link rel="stylesheet" href="./style.css" /> -->
 
     <!-- <script src="./controls-renderer.js" defer></script> -->
-  </head>
+    <style>
+        .axes {
+          padding: 1em;
+        }
+        
+        .gpButtons {
+          margin-left: 1em;
+        }
+        
+        /*meter*/.axis {
+          min-width: 200px;
+          margin: 1em;
+        }
+        
+        .gpButton {
+          display: inline-block;
+          width: 1em;
+          text-align: center;
+          padding: 1em;
+          border-radius: 20px;
+          border: 1px solid black;
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAAxJREFUCNdjYPjPAAACAgEAqiqeJwAAAABJRU5ErkJggg==);
+          background-size: 0% 0%;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+        }
+        
+        .pressed {
+          border: 1px solid red;
+        }
+        
+        .touched::after {
+          content: "touch";
+          display: block;
+          position: absolute;
+          margin-top: -0.2em;
+          margin-left: -0.5em;
+          font-size: 0.8em;
+          opacity: 0.7;
+        }
+        </style>  
+</head>
   <body>
     <div id="preview">
+        <h2 id="start">Press a button on your controller to start</h2>
+        <label for="installedGamepads">Choose a gamepad:</label>
+        <select name="gamepads" id="gamepads">
+        <option value="" id="gamepadOption">--Please choose a gamepad--</option></select>
+        <br><br>
+        
       <video id="video" autoplay muted width="380" height="140"></video>
+      
+      
       <div class="buttons">
         <div>
           <button id="panLeftButton" data-name="pan" disabled>
@@ -66,23 +115,22 @@
     </div>
 
     <div class="addPreset">
-        Preset name:
+        <button id="downloadPresets" disabled>
+            💾Save Presets
+        </button><br>
+        <label for="loadPresets">📂Load Presets"</label>
+        <input type="file" id="loadPresets" name="loadPresets" accept="text/json" />
+        <br><br>
+        Preset name:(Enter a number (0, 1, 2...10) to assign a gamepad button)
         <input type="text" id="newPresetName"/>
         <button id="presetButton" disabled>
             Add preset
-        </button>
-        <button id="downloadPresets" disabled>
-            Download Presets
-        </button>
-        <input type="file" id="loadPresets" accept="text/json">
-            Load Presets
-        </input>
-        <br>
+        </button><br>
         Click on preset to move camera position.
     </div>
     <div id="presets"></div>
             
 
-    <br><br><div id="logs"></div>
+    <br><br><div id="logs" class="Hide"></div>
   </body>
 </html>

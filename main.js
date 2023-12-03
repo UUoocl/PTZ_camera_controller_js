@@ -58,8 +58,9 @@ ipcMain.on('camera-ID', (event) => {
 
   ipcMain.on('open-controls-window', (event, IP, Port, PW, cameraId) => {
     controlsWindow = new BrowserWindow({
+      autoHideMenuBar: true,  
       width: 800,
-      height: 800,
+      height: 1000,
       frame: true,
       movable: true,
       titleBarOverlay: false,
@@ -82,12 +83,12 @@ ipcMain.on('camera-ID', (event) => {
  ipcMain.on('open-camera-window', (event, cameraId) => {
    console.log(`camera ID = ${cameraId}`)
     cameraWindow = new BrowserWindow({
+      autoHideMenuBar: true,  
       width: 1920,
       height: 1080,
-      frame: false,
+      frame: true,
       titleBarOverlay: false,
       backgroundThrottling: false,
-      transparent: true,
       titleBarStyle: 'customButtonsOnHover',
       webPreferences: {
         preload: path.join(__dirname, 'camera-preload.js')

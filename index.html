@@ -1,6 +1,10 @@
-
 <!DOCTYPE html>
 <html>
+    <style>
+        .Hide {
+            visibility: hidden;
+        }
+    </style>
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -12,15 +16,17 @@
 <h4>Connect to OBS WebSocket Server? (optional)</h4>
     <label for="installedCameras">Choose a camera:</label>
     <select name="cameras" id="cameras">
-    <option value="">--Please choose a camera--</option></select>
+    <option value="" id="cameraOptions">--Please choose a camera--</option></select>
     <br><br>
+    
+    <div class="Hide">
     <label for="IP">Enter IP address or "localhost":</label>
     <input type="text" id="IP" name="IP" value="localhost"/><br>
     <label for="Port">Enter Port Number:</label>
     <input type="text" id="Port" name="Port" value="4455"/><br>
     <label for="PW">Enter Password:</label>
     <input type="text" id="PW" name="PW" value="YourPasswordGoesHere"/><br>
-
+    </div>    
 
 <h4><input type="checkbox" id="cameraWindow" name="cameraWindow" value=>
 <label for="cameraWindow">Open Camera Window</label></h4>

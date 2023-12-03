@@ -7,7 +7,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   getCameraId: () => ipcRenderer.send('get-cameras')
 })
 
-
 ipcRenderer.on('SET_CAMERA_SOURCE', async (event, deviceName, deviceID) => { 
   console.log(deviceID)
   var x = document.getElementById("cameras");
