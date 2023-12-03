@@ -1,5 +1,5 @@
 # PTZ_camera_controller_js
-An Electron app to control the insta360 Link Point Tilt Zoom (PTZ) camera. Use a keyboard, Gamepad or the apps basic graphical user interface to control an Insta360 Link camera. 
+A desktop app to control the insta360 Link Point Tilt Zoom (PTZ) camera made with [Electron](https://www.electronjs.org/). Use a keyboard, Gamepad or the apps basic graphical user interface to control an Insta360 Link camera. 
 
 ### [Download the latest release](https://github.com/UUoocl/PTZ_camera_controller_js/releases)
 
