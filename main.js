@@ -58,7 +58,7 @@ ipcMain.on('camera-ID', (event) => {
 
   ipcMain.on('open-controls-window', (event, IP, Port, PW, cameraId) => {
     controlsWindow = new BrowserWindow({
-      autoHideMenuBar: true,  
+      removeMenu: true,  
       width: 800,
       height: 1000,
       frame: true,
@@ -78,6 +78,7 @@ ipcMain.on('camera-ID', (event) => {
       winCamera = cameraId;
 
       controlsWindow.loadFile('controls.html');    
+      controlsWindow.removeMenu();
 })
  
  ipcMain.on('open-camera-window', (event, cameraId) => {
@@ -95,12 +96,14 @@ ipcMain.on('camera-ID', (event) => {
         }
       })
   winCamera = cameraId;
-  cameraWindow.loadFile('camera.html');    
+  cameraWindow.loadFile('camera.html');
+  cameraWindow.removeMenu();    
 })
 
 
    // and load the index.html of the app.
   mainWindow.loadFile('index.html')
+  //mainWindow.removeMenu();
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
